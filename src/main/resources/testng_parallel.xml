@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="Parallel Execution Suite" >
+
+	<listeners>
+		<listener class-name="com.qa.Listeners.ExtentReportListener" />		
+	</listeners>
+
+  <test name="Parallel Automation Test-firefox" parallel="methods" thread-count="3" >
+  <parameter name="browser" value= "firefox" />
+    <classes> 
+	  <class name="com.qa.Tests.LogIn">
+	     <methods>
+		     <include name= "verifyHomePageTitleTest"/>
+		     <include name= "clickSignInTest"/>
+		     
+	     </methods>
+	   </class>        
+    </classes>
+  </test> 
+  
+  
+  
+  <test name="Parallel Automation Test-chrome" parallel="methods" thread-count="3" >
+  <parameter name="browser" value= "chrome" />
+    <classes> 
+	  <class name="com.qa.Tests.Checkout">
+	     <methods>
+		     <include name= "proceedToCheckoutTest"/>
+	     </methods>
+	   </class>        
+    </classes>
+  </test>
+    
+</suite> 

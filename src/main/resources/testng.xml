@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
+<suite name="MyAutomationSuite">
+	<listeners>
+
+		<listener class-name="com.qa.Listeners.ExtentReportListener" />
+		
+	</listeners>
+
+  <test name="AutomationTest" thread-count="5" >
+  
+    <classes>
+    
+   	  <class name="com.qa.Tests.SignIn"/>
+   	  <class name="com.qa.Tests.LogIn"/>
+      <class name="com.qa.Tests.Checkout"/>
+       
+    </classes>
+    
+  </test> <!-- AutomationTest -->
+</suite> <!-- MyAutomationSuite -->
